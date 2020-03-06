@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://nsdb.cnnjgknypryq.ap-south-1.rds.amazonaws.com:3306/todo_db
+    username: admin
+    password: admin1234
+  jpa:
+    hibernate.ddl-auto: validate
+    generate-ddl: true
+    show-sql: true
