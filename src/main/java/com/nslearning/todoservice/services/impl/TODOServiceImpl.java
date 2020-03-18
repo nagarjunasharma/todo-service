@@ -1,13 +1,13 @@
-package com.ctl.todoservice.services.impl;
+package com.nslearning.todoservice.services.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ctl.todoservice.model.TODOItem;
-import com.ctl.todoservice.repository.TODORepository;
-import com.ctl.todoservice.services.TODOService;
+import com.nslearning.todoservice.model.TODOItem;
+import com.nslearning.todoservice.repository.TODORepository;
+import com.nslearning.todoservice.services.TODOService;
 
 @Service
 public class TODOServiceImpl implements TODOService {
@@ -21,8 +21,8 @@ public class TODOServiceImpl implements TODOService {
 	}
 
 	@Override
-	public List<TODOItem> findByCreatedBy(String createdBy) {
-		return repository.findByCreatedBy(createdBy).orElse(null);
+	public List<TODOItem> findByUserId(long userId) {
+		return repository.findByUserId(userId).orElse(null);
 	}
 
 	@Override

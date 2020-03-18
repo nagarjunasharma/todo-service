@@ -1,4 +1,4 @@
-package com.ctl.todoservice;
+package com.nslearning.todoservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

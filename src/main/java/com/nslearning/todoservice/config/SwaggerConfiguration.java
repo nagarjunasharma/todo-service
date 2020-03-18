@@ -1,4 +1,4 @@
-package com.ctl.todoservice.config;
+package com.nslearning.todoservice.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

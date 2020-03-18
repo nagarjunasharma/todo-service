@@ -1,4 +1,4 @@
-package com.ctl.todoservice.model;
+package com.nslearning.todoservice.model;
 
 import java.util.Date;
 
@@ -28,8 +28,10 @@ public class TODOItem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Setter(value = AccessLevel.PROTECTED)
 	private long id;
-	@Column(name =  "description")
-	private String description;
+	@Column(name = "user_id")
+	private long userId;
+	@Column(name =  "name")
+	private String name;
 	@Column(name =  "created_at")
 	private Date createdDate;
 	@Column(name =  "due_date")

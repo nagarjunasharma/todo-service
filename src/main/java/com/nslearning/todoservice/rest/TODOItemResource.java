@@ -1,4 +1,4 @@
-package com.ctl.todoservice.rest;
+package com.nslearning.todoservice.rest;
 
 import java.util.List;
 
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ctl.todoservice.model.TODOItem;
-import com.ctl.todoservice.services.TODOService;
+import com.nslearning.todoservice.model.TODOItem;
+import com.nslearning.todoservice.services.TODOService;
 
 @RestController
 @RequestMapping(value = "/todo", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -32,16 +32,16 @@ public class TODOItemResource {
 				: new ResponseEntity<TODOItem>(HttpStatus.NOT_FOUND));
 	}
 
-	@GetMapping("/user/{name}")
-	public ResponseEntity<List<TODOItem>> findByUser(@PathVariable("name") String username) {
-		List<TODOItem> todoItems = todoService.findByCreatedBy(username);
+	@GetMapping("/user/{userId}")
+	public ResponseEntity<List<TODOItem>> findByUser(@PathVariable("userId") long userId) {
+		List<TODOItem> todoItems = todoService.findByUserId(userId);
 		return (todoItems != null ? new ResponseEntity<List<TODOItem>>(todoItems, HttpStatus.OK)
 				: new ResponseEntity<List<TODOItem>>(HttpStatus.NOT_FOUND));
 	}
 
 	@PostMapping
 	public ResponseEntity<TODOItem> save(@RequestBody TODOItem item) {
-		return new ResponseEntity<TODOItem>(todoService.saveOrUpdate(item), HttpStatus.OK);
+		return new ResponseEntity<>(todoService.saveOrUpdate(item), HttpStatus.OK);
 	}
 
 	@PutMapping
