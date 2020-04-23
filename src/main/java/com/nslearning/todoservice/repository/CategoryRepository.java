@@ -6,11 +6,11 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.nslearning.todoservice.model.TODOItem;
+import com.nslearning.todoservice.model.Category;
 
 @Repository
-public interface TODORepository extends JpaRepository<TODOItem, Long> {
+public interface CategoryRepository extends JpaRepository<Category, Long> {
 	
-	public Optional<List<TODOItem>> findByUserId(long userId); 
+	public Optional<List<Category>> findByUserId(long userId); 
 
 }

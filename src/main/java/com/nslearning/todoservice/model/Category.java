@@ -20,25 +20,19 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Entity
-@Table(name = "todo_item")
-public class TODOItem {
+@Table(name = "category")
+public class Category {
 	
 	@Id
-	@Column(name =  "todo_id")
+	@Column(name =  "category_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Setter(value = AccessLevel.PROTECTED)
-	private long id;
+	private long categoryId;
 	@Column(name = "user_id")
 	private long userId;
 	@Column(name =  "name")
 	private String name;
 	@Column(name =  "created_at")
 	private Date createdDate;
-	@Column(name =  "due_date")
-	private Date dueDate;
-	@Column(name =  "created_by")
-	private String createdBy;
-	@Column(name =  "is_completed",columnDefinition = "TINYINT")
-	private boolean completed;
 
 }

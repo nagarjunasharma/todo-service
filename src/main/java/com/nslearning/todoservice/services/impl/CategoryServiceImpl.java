@@ -5,33 +5,33 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.nslearning.todoservice.model.TODOItem;
-import com.nslearning.todoservice.repository.TODORepository;
-import com.nslearning.todoservice.services.TODOService;
+import com.nslearning.todoservice.model.Category;
+import com.nslearning.todoservice.repository.CategoryRepository;
+import com.nslearning.todoservice.services.CategoryService;
 
 @Service
-public class TODOServiceImpl implements TODOService {
+public class CategoryServiceImpl implements CategoryService {
 	
 	@Autowired
-	private TODORepository repository;
+	private CategoryRepository repository;
 
 	@Override
-	public TODOItem findById(long id) {
+	public Category findById(long id) {
 		return repository.findById(id).orElse(null);
 	}
 
 	@Override
-	public List<TODOItem> findByUserId(long userId) {
+	public List<Category> findByUserId(long userId) {
 		return repository.findByUserId(userId).orElse(null);
 	}
 
 	@Override
-	public TODOItem saveOrUpdate(TODOItem item) {
+	public Category saveOrUpdate(Category item) {
 		return repository.save(item);
 	}
 
 	@Override
-	public void delete(TODOItem item) {
+	public void delete(Category item) {
 		repository.delete(item);
 	}
 	
